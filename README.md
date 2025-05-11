@@ -13,6 +13,7 @@ Output: Interactive plots of fitted curves and residuals, along with printed bes
 Note: The best fitting model (Gaussian) was plotted separately after it was identified as the most suitable fit based on the statistical comparison. :)
 # Energy Channel Calib: 
 ## "compton - visual peak show best fit of peak.py" or "compton - energychannel - step1(excel&no BG&all parameters&N_meas).py"
+
 first sctipt:  Loads .mca gamma spectra files, allows the user to interactively select peak regions, fits each selected peak using both "Gaussian + linear background" and "Gaussian + exponential background" models, compares the fits based on statistical criteria (χ² and p-value), and visualizes both the individual and overlaid fits for each peak.
 Input: One or more .mca files(Am,Cs,Ba,Na) containing gamma ray spectra with real/live.
 Output: Interactive plots showing raw spectra, best fit models per peak (including Gaussian-only and full background models), and printed fit parameters with uncertainties and goodness of its statistics.
