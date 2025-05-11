@@ -45,10 +45,12 @@ Input: An Excel file with four columns: energy values (keV), efficiency values, 
 Output: Printed fit parameters with uncertainties and statistical fit quality (χ², reduced χ², p-value), and two plots: the efficiency fit vs. energy and the residuals.
 # Part A and B 
 ## "compton - FindMeasPeaksWithAng - Part A+B(Not include BG).py" or "compton - FindMeasPeaksWithAng - Part A+B.py"
+
 First Script: Processes a folder of .mca gamma ray spectra files labeled by scattering angle, allows the user to interactively select peaks in each spectrum, fits each peak with both Gaussian+linear and Gaussian+exponential background models, calculates fit parameters and detector calibrated energies, and exports all results along with the best fit per peak to Excel.
 Input: A folder containing .mca files named with angle as ang(30).mca 
 Output: Two Excel files=> one with full fit results (ComptonAngle_Fits.xlsx) and one with the best fit per peak (ComptonAngle_Fits_best_fit.xlsx), plus visual plots of each fit during execution.
 ----------------------------------------------------------------------------------------------------------------------------
+
 Second script: This script loads a background .mca file and a folder of angle-labeled .mca spectra files, performs background subtraction, allows interactive peak selection, fits each selected peak with both Gaussian+linear and Gaussian+exponential models, applies an energy calibration, and saves full fit results and the best fits to Excel.
 Input: One background .mca file (measured without the source), a folder containing sample .mca files named with angles like ang(30).mca, each file must contain REAL_TIME and LIVE_TIME.
 Otput: ComptonAngle_Fits.xlsx: full table of all peak fits (parameters, uncertainties, calibrated energies, fit statistics) and ComptonAngle_Fits_best_fit.xlsx=> a filtered table with the best fit for each angle/peak based on reduced chi-squared
