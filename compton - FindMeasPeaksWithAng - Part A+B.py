@@ -195,7 +195,7 @@ def main():
     base, ext = os.path.splitext(output_path)
     best_fit_path = base + "_best_fit" + ext
     best_fit_df.to_excel(best_fit_path, index=False)
-    print(f"✅ Best fits saved to {best_fit_path}")
+    print(f" Best fits saved to {best_fit_path}")
 
 
 main()
