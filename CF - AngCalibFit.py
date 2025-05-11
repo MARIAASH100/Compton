@@ -61,8 +61,8 @@ norm_amplitude_fit = norm_amplitude[mask]
 norm_amplitude_err_fit = norm_amplitude_err[mask]
 
 # === Define models ===
-def gaussian(x, a, x0, sigma):
-    return a * np.exp(-((x - x0)**2) / (2 * sigma**2))
+def gaussian(x, a, x0, sigma,c):
+    return a * np.exp(-((x - x0)**2) / (2 * sigma**2))+c
 
 def parabola(x, a, x0, c):
     return a * (x - x0)**2 + c
