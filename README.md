@@ -17,7 +17,7 @@ Note: The best fitting model (Gaussian) was plotted separately after it was iden
 first sctipt:  Loads .mca gamma spectra files, allows the user to interactively select peak regions, fits each selected peak using both "Gaussian + linear background" and "Gaussian + exponential background" models, compares the fits based on statistical criteria (χ² and p-value), and visualizes both the individual and overlaid fits for each peak.
 Input: One or more .mca files(Am,Cs,Ba,Na) containing gamma ray spectra with real/live.
 Output: Interactive plots showing raw spectra, best fit models per peak (including Gaussian-only and full background models), and printed fit parameters with uncertainties and goodness of its statistics.
-===
+
 Second script: The script performs background subtraction on gamma-ray spectra using a selected background .mca file (obtained by turning off all radioactive sources and measuring for an extended time to capture the environmental background only). It then allows the user to interactively select peak regions in multiple sample spectra, fits each peak with both Gaussian+linear and Gaussian+exponential models, extracts peak parameters and statistical metrics, and saves the complete analysis results to an Excel file.
 Input: One background .mca file and one or more sample .mca files(Am,Cs,Ba,Na) containing gamma ray spectra with real/live time metadata.
 Output: Interactive plots of raw, background, and corrected spectra with fitted peaks, plus an Excel file (EnergyCalibFits_BGsubtracted.xlsx) summarizing peak positions, widths, counts, uncertainties, and fit quality statistics for each peak.
@@ -47,17 +47,24 @@ Output: Printed fit parameters with uncertainties and statistical fit quality (�
 # Part A and B 
 ## "compton - FindMeasPeaksWithAng - Part A+B(Not include BG).py" or "compton - FindMeasPeaksWithAng - Part A+B.py"
 
-First Script: Processes a folder of .mca gamma ray spectra files labeled by scattering angle, allows the user to interactively select peaks in each spectrum, fits each peak with both Gaussian+linear and Gaussian+exponential background models, calculates fit parameters and detector calibrated energies, and exports all results along with the best fit per peak to Excel.
+=First Script=: Processes a folder of .mca gamma ray spectra files labeled by scattering angle, allows the user to interactively select peaks in each spectrum, fits each peak with both Gaussian+linear and Gaussian+exponential background models, calculates fit parameters and detector calibrated energies, and exports all results along with the best fit per peak to Excel.
 Input: A folder containing .mca files named with angle as ang(30).mca 
 Output: Two Excel files=> one with full fit results (ComptonAngle_Fits.xlsx) and one with the best fit per peak (ComptonAngle_Fits_best_fit.xlsx), plus visual plots of each fit during execution.
-----------------------------------------------------------------------------------------------------------------------------
 
 Second script: This script loads a background .mca file and a folder of angle-labeled .mca spectra files, performs background subtraction, allows interactive peak selection, fits each selected peak with both Gaussian+linear and Gaussian+exponential models, applies an energy calibration, and saves full fit results and the best fits to Excel.
 Input: One background .mca file (measured without the source), a folder containing sample .mca files named with angles like ang(30).mca, each file must contain REAL_TIME and LIVE_TIME.
 Otput: ComptonAngle_Fits.xlsx: full table of all peak fits (parameters, uncertainties, calibrated energies, fit statistics) and ComptonAngle_Fits_best_fit.xlsx=> a filtered table with the best fit for each angle/peak based on reduced chi-squared
--------------------------------------------------------------------------------------------------------------------------
+
 Note: We use the first script in Part B for all the angles, as it introduces less error from external environmental contamination.
 ## compton - PartA&B - find sigma and dsigma (alu or si).py
+This script calculates the differential cross section dσ/dΩ and its uncertainty for Compton scattering using experimental peak data, detector efficiency, and physical constants specific to the selected target material (Aluminum or Silicon).
+Input: elected target material (alu or si) + an Excel file containing calibrated energy, counts, live time, and their uncertainties.
+Output: A new Excel file with added columns for detector efficiency, its uncertainty + dσ/dΩ and its uncertainty.
 ## compton - partA&B - linear fit for energy shift.p
+This script performs a weighted linear fit to Compton scattering data by plotting 1/E' vs 1-cos extracts the incident photon energy and electron rest mass from the fit, compares them to theoretical values using Nσ and visualizes both the fit and residuals.
+Input: An Excel file containing calibrated energies and angles with uncertainties (generated by the previous script).
+Output: Printed fit parameters and physical constants and two plots: the linear fit and the residuals.
 ## compton - PartA&B - Plar rep try 7.py
-
+This script fits Compton scattering differential cross section data (from the previous script’s Excel output) using both the Klein–Nishina and Thomson models, compares the quality of fits (χ², p-value), visualizes the results on a polar plot, and extracts physical constants such as the classical electron radius r0 and incident photon energy.
+Input: An Excel file containing columns for scattering angle (in radians), differential cross section dσ/dΩ and its uncertainty — generated by the previous script.
+Output: A polar plot comparing experimental data to both theoretical models, and printed fit parameters, statistics, and extracted physical quantities.
