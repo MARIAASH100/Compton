@@ -17,7 +17,7 @@ Note: The best fitting model (Gaussian) was plotted separately after it was iden
 first sctipt:  Loads .mca gamma spectra files, allows the user to interactively select peak regions, fits each selected peak using both "Gaussian + linear background" and "Gaussian + exponential background" models, compares the fits based on statistical criteria (χ² and p-value), and visualizes both the individual and overlaid fits for each peak.
 Input: One or more .mca files(Am,Cs,Ba,Na) containing gamma ray spectra with real/live.
 Output: Interactive plots showing raw spectra, best fit models per peak (including Gaussian-only and full background models), and printed fit parameters with uncertainties and goodness of its statistics.
---------------------------------------------------------------------------------------------------------------------------------------------------
+===
 Second script: The script performs background subtraction on gamma-ray spectra using a selected background .mca file (obtained by turning off all radioactive sources and measuring for an extended time to capture the environmental background only). It then allows the user to interactively select peak regions in multiple sample spectra, fits each peak with both Gaussian+linear and Gaussian+exponential models, extracts peak parameters and statistical metrics, and saves the complete analysis results to an Excel file.
 Input: One background .mca file and one or more sample .mca files(Am,Cs,Ba,Na) containing gamma ray spectra with real/live time metadata.
 Output: Interactive plots of raw, background, and corrected spectra with fitted peaks, plus an Excel file (EnergyCalibFits_BGsubtracted.xlsx) summarizing peak positions, widths, counts, uncertainties, and fit quality statistics for each peak.
