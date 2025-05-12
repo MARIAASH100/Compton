@@ -56,7 +56,7 @@ Input: One background .mca file (measured without the source), a folder containi
 Otput: ComptonAngle_Fits.xlsx: full table of all peak fits (parameters, uncertainties, calibrated energies, fit statistics) and ComptonAngle_Fits_best_fit.xlsx=> a filtered table with the best fit for each angle/peak based on reduced chi-squared
 
 Note: We use the first script in Part B for all the angles, as it introduces less error from external environmental contamination.
-## compton - PartA&B - find sigma and dsigma (alu or si).py
+## compton - PartA&B - find sigma and dsigma (alu or pal).py
 This script calculates the differential cross section dσ/dΩ and its uncertainty for Compton scattering using experimental peak data, detector efficiency, and physical constants specific to the selected target material (Aluminum or Silicon).
 Input: elected target material (alu or si) + an Excel file containing calibrated energy, counts, live time, and their uncertainties.
 Output: A new Excel file with added columns for detector efficiency, its uncertainty + dσ/dΩ and its uncertainty.
