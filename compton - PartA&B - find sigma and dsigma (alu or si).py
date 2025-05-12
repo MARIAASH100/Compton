@@ -25,9 +25,9 @@ if target == 'alu':
     rho_m = 2.70  # g/cm³
     V_eff, dV_eff = 53.407, 0.003141592654
 elif target == 'si':
-    Z = 14
-    A = 28.0855
-    rho_m = 2.33  # g/cm³
+    Z = 3.85
+    A = (12.01 * 4.78 + 1.008 * 5.28) / (4.78 + 5.28)  #g/mol
+    rho_m = 1.032  # g/cm³
     V_eff, dV_eff = 56.81, 0.003141592654  # replace with actual values if known (i tried my best to measure this black cylinder)
 else:
     raise ValueError("Invalid target type.Put 'alu' or 'si'.")
