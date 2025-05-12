@@ -23,15 +23,15 @@ if target == 'alu':
     Z = 13
     A = 26.98  # g/mol
     rho_m = 2.70  # g/cm³
-    V_eff, dV_eff = 0.053407, 0.003141592654
+    V_eff, dV_eff = 53.407, 0.003141592654 #pi(rod diameter/2)^2*(rod hight) =>will be explained in the read me section
 elif target == 'pal':
     Z = 3.85
     A = (12.01 * 4.78 + 1.008 * 5.28) / (4.78 + 5.28)  #g/mol
     rho_m = 1.032  # g/cm³
-    #V_eff, dV_eff = 56.81, 0.003141592654  # replace with actual values if known (i tried my best to measure this black cylinder)
-    V_eff, dV_eff = 0.0314, 0.003141592654
+    V_eff, dV_eff = 56.81, 0.003141592654  # replace with actual values if known (i tried my best to measure this black cylinder)
+    #V_eff, dV_eff = 0.0314, 0.003141592654
 else:
-    raise ValueError("Invalid target type.Put 'alu' or 'si'.")
+    raise ValueError("Invalid target type.Put 'alu' or 'pal'.")
 
 # === Constants ===
 N_A = 6.022e23  # Avogadro's number
