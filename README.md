@@ -1,6 +1,17 @@
-# full explanation will be added till tonight
+
 # Compton-Scattering
 A Compton scattering experiment using a Cs-137 source to measure angular-dependent gamma scattering and validate the Klein–Nishina cross section against classical and quantum predictions.
+# The system's user manual for part B and A  .docx file are in the final stages of preparation and will be uploaded on 15/05
+# Computational methods will be uplad till 16/05 
+1)For the extrapolation of the photopeak in the angle calibration, we chose either linear or exponential extrapolation, as mentioned in an article that discusses which background model is more suitable for different gamma ray energies("Ng, Edwin. "The Kinematics and Electron Cross Sections of Compton Scattering."")
+2) How do you know if your resolution is bad? If the Gaussian is under 5σ and it’s hard to clearly see the peak, then the resolution probably isn’t good enough. First, figure out how long you’d need to measure to get a 5σ peak. If that’s not doable, try using some filtering to help.
+Suggested solution for poor resolution: To smooth noise in the gamma spectra, we will use the Savitzky–Golay filter: 
+* https://crp2a.github.io/gamma/reference/smooth.html
+* Good for low statistics of gamma : “Analysis of Gamma Spectrum with low statistics”S. Balakrishnan1 , P. K. Joshi2 https://sympnp.org/proceedings/68/G28.pdf => reduce noise and enhance peak clarity in gamma spectra and we are happier
+3)
+# How to measure (updated till 15)
+# Problems occurred during the measurement & How to aviod them (updated till 16)
+
 # Angle Calibration: 
 ## compton-angleCalib3.py
 Loads multiple .mca files from a selected folder(you choose), and the user interactively select a peak region in each spectrum, fits and subtracts a linear background(Since we use a high energy gamma source (Cs-137), the background is expected to vary slowly with energy. Therefore, we assume it can be well approximated by a linear function within the selected region), fits a Gaussian to the peak, extracts peak parameters (amplitude, center, width), and saves all results (including statistical fit quality and angle from filename) into an Excel file.
