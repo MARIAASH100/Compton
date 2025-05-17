@@ -1,7 +1,10 @@
 
 # Compton-Scattering
 A Compton scattering experiment using a Cs-137 source to measure angular-dependent gamma scattering and validate the Klein–Nishina cross section against classical and quantum predictions.
-# The system's user manual for part B and A  .docx file are in the final stages of preparation and will be uploaded on 15/05
+# The system's user manual for Part B and Part A is in the final stages of preparation:
+The Part B file was uploaded as "part b connection.docx".
+The Part A file will be uploaded soon, although it is a much simpler part.
+Further changes and cosmetic improvements will be made to the Part B file in the future.
 # Computational methods with statistics with equations( will be uplad till 16/05 )
 1)For the extrapolation of the photopeak in the angle calibration, we chose either linear or exponential extrapolation, as mentioned in an article that discusses which background model is more suitable for different gamma ray energies("Ng, Edwin. "The Kinematics and Electron Cross Sections of Compton Scattering."")
 2) How do you know if your resolution is bad? If the Gaussian is under 5σ and it’s hard to clearly see the peak, then the resolution probably isn’t good enough. First, figure out how long you’d need to measure to get a 5σ peak. If that’s not doable, try using some filtering to help.
