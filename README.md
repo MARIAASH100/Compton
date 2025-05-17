@@ -8,10 +8,22 @@ A Compton scattering experiment using a Cs-137 source to measure angular-depende
 Suggested solution for poor resolution: To smooth noise in the gamma spectra, we will use the Savitzky–Golay filter: 
 * https://crp2a.github.io/gamma/reference/smooth.html
 * Good for low statistics of gamma : “Analysis of Gamma Spectrum with low statistics”S. Balakrishnan1 , P. K. Joshi2 https://sympnp.org/proceedings/68/G28.pdf => reduce noise and enhance peak clarity in gamma spectra and we are happier
-3)
+3) The MCA system used ORTEC 4001A modules with very accurate Live Time, so any error from Live Time was much smaller than the usual measurement and fitting errors, and could be ignored (we included it).
+4) According to Krane, page 224, we may take the statistical uncertainty of the peak centroid (channel position) as:
+$$
+\sigma_{\text{centroid}} = \frac{\text{FWHM}}{2.35 \sqrt{N}}
+$$
+This formula gives the statistical uncertaintyin the position of the peak centroid, when: 
+FWHM is the full width at half maximum of the peak.
+N is the total number of counts under the peak.
+see: https://www.ortec-online.com/-/media/ametekortec/third-edition-experiments/10-compton-scattering.pdf?la=en&revision=dc0de3b8-aacc-498f-adf5-610df8b47915&hash=41EE9FF9FB8303EC409C0023BE06A4C2
+
+
 # How to measure (updated till 15)
 # Problems occurred during the measurement & How to aviod them (updated till 16)
-
+1) For angle calibration : We measured the angles at different times (which we recommend not to do). There's no real need for that just set the live time to 2 minutes for each measurement. And if you do use different times, we suggest normalizing the results by the live time. Without normalizing by live time, the results might look incorrect just because the measurements were taken for different amounts of time not because anything actually changed. Normalizing makes sure the angles are compared fairly. see: https://link.springer.com/article/10.1007/s10967-024-09729-7
+2) dead time and pile-up can cause missed counts and make nuclear measurements less accurate (not perfectly random like Poisson), and shows ways to fix or reduce those errors(for the first part maybe good - we didn't do that), Uncertainty of nuclear counting: https://iopscience.iop.org/article/10.1088/0026-1394/52/3/S3/pdf .
+3) 
 # Angle Calibration: 
 ## compton-angleCalib3.py
 Loads multiple .mca files from a selected folder(you choose), and the user interactively select a peak region in each spectrum, fits and subtracts a linear background(Since we use a high energy gamma source (Cs-137), the background is expected to vary slowly with energy. Therefore, we assume it can be well approximated by a linear function within the selected region), fits a Gaussian to the peak, extracts peak parameters (amplitude, center, width), and saves all results (including statistical fit quality and angle from filename) into an Excel file.
