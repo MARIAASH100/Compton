@@ -10,15 +10,14 @@ Suggested solution for poor resolution: To smooth noise in the gamma spectra, we
 * Good for low statistics of gamma : “Analysis of Gamma Spectrum with low statistics”S. Balakrishnan1 , P. K. Joshi2 https://sympnp.org/proceedings/68/G28.pdf => reduce noise and enhance peak clarity in gamma spectra and we are happier
 3) The MCA system used ORTEC 4001A modules with very accurate Live Time, so any error from Live Time was much smaller than the usual measurement and fitting errors, and could be ignored (we included it).
 4) According to Krane, page 224, we may take the statistical uncertainty of the peak centroid (channel position) as:
-$$
-\sigma_{{centroid}} = \frac{{FWHM}}{2.35 \sqrt{N}}
-$$
+σ_centroid = FWHM / (2.35 × √N)
 This formula gives the statistical uncertaintyin the position of the peak centroid, when: 
 FWHM is the full width at half maximum of the peak.
 N is the total number of counts under the peak.
 see: https://www.ortec-online.com/-/media/ametekortec/third-edition-experiments/10-compton-scattering.pdf?la=en&revision=dc0de3b8-aacc-498f-adf5-610df8b47915&hash=41EE9FF9FB8303EC409C0023BE06A4C2
 5) We too ideas from "The Mirion Nuclear Science Experiments Manual" , good for compton scattering experiments because it provides detailed procedures, theoretical background, and necessary equipment specifications to accurately measure and analyze gamma ray interactions, see: https://assets-mirion.mirion.com/prod-20220822/cms4_mirion/files/images/brochure-images/ops-1476_nuclear_science_experiments_manual.pdf
-6) For Part A, we tried both background subtraction methods: scaled background subtraction and local background fitting using exponential and linear models. We found that the scaling method gave a little better results. In the scaling method, we take a background measurement without the radioactive source to see how the spectrum behaves across all channels. Since this background has counts across the full range, we scale it by the ratio of live time between the background and the sample measurements. This approach is commonly used in video and image processing, where background subtraction relies on pixel-based scaling. We applied a similar idea here, assuming that the background behaves linearly and can be corrected by scaling in the same way.
+6) For Part A, we tried both background subtraction methods: scaled background subtraction and local background fitting using exponential and linear models. We found that the scaling method gave a little better results. In the scaling method, we take a background measurement without the radioactive source to see how the spectrum behaves across all channels. Since this background has counts across the full range, we scale it by the ratio of live time between the background and the sample measurements. This approach is commonly used in video and image processing, where background subtraction relies on pixel-based scaling. We applied a similar idea here, assuming that the background behaves linearly and can be corrected by scaling in the same way. 
+Corrected_i = Sample_i - (T_sample / T_bkg) * Bkg_i
 
 # How to measure (updated till 15)
 # Problems occurred during the measurement & How to aviod them (updated till 16)
