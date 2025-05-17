@@ -83,8 +83,8 @@ Otput: ComptonAngle_Fits.xlsx: full table of all peak fits (parameters, uncertai
 
 Note: We use the first script in Part B for all the angles, as it introduces less error from external environmental contamination.
 ## compton - PartA&B - find sigma and dsigma (alu or pal).py
-This script calculates the differential cross section dσ/dΩ and its uncertainty for Compton scattering using experimental peak data, detector efficiency, and physical constants specific to the selected target material (Aluminum or Silicon).
-Input: elected target material (alu or si) + an Excel file containing calibrated energy, counts, live time, and their uncertainties.
+This script calculates the differential cross section dσ/dΩ and its uncertainty for Compton scattering using experimental peak data, detector efficiency, and physical constants specific to the selected target material (Aluminum or plasric).
+Input: elected target material (alu or pal) + an Excel file containing calibrated energy, counts, live time, and their uncertainties.
 Output: A new Excel file with added columns for detector efficiency, its uncertainty + dσ/dΩ and its uncertainty.
 ## compton - partA&B - linear fit for energy shift.p
 This script performs a weighted linear fit to Compton scattering data by plotting 1/E' vs 1-cos extracts the incident photon energy and electron rest mass from the fit, compares them to theoretical values using Nσ and visualizes both the fit and residuals.
