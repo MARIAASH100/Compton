@@ -11,7 +11,7 @@ Suggested solution for poor resolution: To smooth noise in the gamma spectra, we
 3) The MCA system used ORTEC 4001A modules with very accurate Live Time, so any error from Live Time was much smaller than the usual measurement and fitting errors, and could be ignored (we included it).
 4) According to Krane, page 224, we may take the statistical uncertainty of the peak centroid (channel position) as:
 $$
-\sigma_{\text{centroid}} = \frac{\text{FWHM}}{2.35 \sqrt{N}}
+\sigma_{{centroid}} = \frac{{FWHM}}{2.35 \sqrt{N}}
 $$
 This formula gives the statistical uncertaintyin the position of the peak centroid, when: 
 FWHM is the full width at half maximum of the peak.
